@@ -1,0 +1,24 @@
+---
+- name: "{{ ansible_distribution | lower }} | {{ ansible_distribution_release }} - Install requirements."
+  pip:
+    name:
+      - jsondiff
+      - pyyaml
+  when:
+    - inventory_hostname == docker_swarm_primary_manager_name
+
+- name: "{{ ansible_distribution | lower }} | {{ ansible_distribution_release }} - Download Portainer for Docker Swarm."
+  get_url:
+    url: "{{ portainer_url }}"
+    dest: "{{ portainer_script_dest }}"
+  when:
+    - inventory_hostname == docker_swarm_primary_manager_name
+
+- name: "{{ ansible_distribution | lower }} | {{ ansible_distribution_release }} - Deploy Portainer."
+  community.docker.docker_stack:
+    state: "{{ portainer_state }}"
+    name: "{{ portainer_stack_name }}"
+    compose:
+      - "{{ portainer_script_dest }}"
+  when:
+    - inventory_hostname == docker_swarm_primary_manager_name
