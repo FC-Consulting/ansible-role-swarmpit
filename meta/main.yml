@@ -1,8 +1,8 @@
 ---
 galaxy_info:
   author: Florent Colinet
-  role_name: portainer_swarm
-  description: Deploy portainer in a Docker Swarm Cluster
+  role_name: swarmpit
+  description: Deploy Swarmpit in a Docker Swarm Cluster
   license: GPLv3
   company: FC-Consulting
   min_ansible_version: 2.9
@@ -15,7 +15,7 @@ galaxy_info:
   galaxy_tags:
     - docker
     - swarm
-    - portainer
+    - swarmpit
   
 collections:
   - community.docker

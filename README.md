@@ -1,7 +1,7 @@
-ANSIBLE-ROLE-PORTAINER-SWARM
-============================
+ANSIBLE-ROLE-SWARMPIT
+=====================
 
-Deploy portainer in a Docker Swarm Cluster
+Deploy Swarmpit in a Docker Swarm Cluster
 
 
 ## Howto use this role?
@@ -16,7 +16,7 @@ ansible-galaxy install -r requirements.yml
 Inside requirements.yml
 ````yaml
 # from GitHub, overriding the name and specifying a specific tag
-- src: fcolinet.portainer_swarm
+- src: fcolinet.swarmpit
 ````
 
 More info => [Ansible Docs](https://docs.ansible.com/ansible-container/roles/access.html)
@@ -46,7 +46,7 @@ Including an example of how to use your role (for instance, with variables passe
 
     - hosts: all
       roles:
-         - { role: fcolinet.portainer_swarm, tags: mytags }
+         - { role: fcolinet.swarmpit, tags: mytags }
 
 
 Molecule testing framework

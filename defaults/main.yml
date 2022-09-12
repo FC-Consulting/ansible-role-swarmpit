@@ -1,8 +1,5 @@
 ---
-portainer_edition: "ce"
-portainer_version: "2-14"
-portainer_script_name: "portainer-agent-stack.yml"
-portainer_script_dest: "/opt/{{ portainer_script_name }}"
-portainer_url: "https://downloads.portainer.io/{{ portainer_edition }}{{ portainer_version }}/{{ portainer_script_name }}"
-portainer_stack_name: "portainer"
-portainer_state: present
+swarmpit_image: "swarmpit/install"
+swarmpit_version: "1.9"
+swarmpit_stack_name: "swarmpit-installer"
+swarmpit_state: present
